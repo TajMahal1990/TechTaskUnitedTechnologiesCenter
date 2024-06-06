@@ -1,11 +1,12 @@
-package com.example.bookpdf
+package com.example.bookpdf.ui.book_list_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.bookpdf.R
 
-class MainActivity : AppCompatActivity() {
+class BookListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_book_list)
     }
 }
