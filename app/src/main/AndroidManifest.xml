@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BookPdf"
         tools:targetApi="31">
         <activity
+            android:name=".ui.categiry_activity.CategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.details_activity.DetailsActivity"
             android:exported="false" />
         <activity
