@@ -2,9 +2,9 @@ package com.example.bookpdf.ui.details_activity
 
 import android.app.Dialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.bookpdf.R
 import com.example.bookpdf.data.model.BooksModel
@@ -42,11 +42,12 @@ class DetailsActivity : AppCompatActivity() {
                 mAuthorName.text = author
                 mBookDesc.text = description
                 mBookImage.loadOnline(image)
-
             }
             mReadBookBtn.setOnClickListener {
-                viewModel.downloadFile(bookModel.bookPDF, "${bookModel.title}.pdf")
-
+                Intent(activity, PdfActivity::class.java).apply {
+                    putExtra("bookPdf", bookModel.bookPDF)
+                    startActivity(this)
+                }
             }
 
             val dialogBinding = LayoutProgressBinding.inflate(layoutInflater)
@@ -56,11 +57,10 @@ class DetailsActivity : AppCompatActivity() {
             }
 
             viewModel.downloadLiveData.observe(activity) {
-                when (it){
+                when (it) {
                     is MyResponses.Error -> {
                         dialog.dismiss()
                         Log.e(TAG, "onCreate: ${it.errorMessage}")
-
                     }
                     is MyResponses.Loading -> {
                         dialog.show()
@@ -69,9 +69,8 @@ class DetailsActivity : AppCompatActivity() {
                     is MyResponses.Success -> {
                         dialog.dismiss()
                         Log.i(TAG, "onCreate: Downloaded ${it.data}")
-                        Intent().apply {
-                            putExtra("bookPdf",it.data?.filePath)
-                            setClass(activity,PdfActivity::class.java)
+                        Intent(activity, PdfActivity::class.java).apply {
+                            putExtra("bookPdf", it.data?.filePath)
                             startActivity(this)
                         }
                     }

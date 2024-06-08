@@ -16,7 +16,7 @@ class PdfActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        val bookPdf = intent.getStringExtra("book_pdf")
+        val bookPdf = intent.getStringExtra("bookPdf")
         if (bookPdf != null) {
             try {
                 binding.pdfView.fromAsset(bookPdf)

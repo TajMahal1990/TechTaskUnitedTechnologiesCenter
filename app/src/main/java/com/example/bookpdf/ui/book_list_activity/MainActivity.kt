@@ -2,7 +2,6 @@ package com.example.bookpdf.ui.book_list_activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.bookpdf.R
 import com.example.bookpdf.data.model.BooksModel
 import com.example.bookpdf.data.model.HomeModel
 import com.example.bookpdf.databinding.ActivityMainBinding
