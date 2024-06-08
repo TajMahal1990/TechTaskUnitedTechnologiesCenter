@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
 }
 
 android {
@@ -52,5 +53,10 @@ dependencies {
     //glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.13.2")
+    //lifecycle
+    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.8.1")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.1")
+    //coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
 }
