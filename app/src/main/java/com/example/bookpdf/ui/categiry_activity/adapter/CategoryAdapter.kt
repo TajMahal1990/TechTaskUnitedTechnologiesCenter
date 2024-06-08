@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.bookpdf.data.model.BooksModel
 import com.example.bookpdf.databinding.ItemCategoryBinding
 import com.example.bookpdf.utils.loadOnline
@@ -12,16 +11,16 @@ import com.example.bookpdf.utils.loadOnline
 
 class CategoryAdapter(val list: ArrayList<BooksModel>, val context: Context) :
     RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
-
     class CategoryViewHolder(val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(model: BooksModel, context: Context) {
             binding.apply {
                 mBookTitle.text = model.title
-                Glide.with(context).load(model.image).into(mBookImage)
+                mBookImage.loadOnline(model.image)
                 mBookDesc.text = model.description
                 mAuthorName.text = model.author
             }
+
         }
     }
 
