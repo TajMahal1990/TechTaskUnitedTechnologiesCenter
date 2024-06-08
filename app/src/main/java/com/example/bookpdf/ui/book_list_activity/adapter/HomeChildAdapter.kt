@@ -1,18 +1,13 @@
 package com.example.bookpdf.ui.book_list_activity.adapter
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.example.bookpdf.data.model.BooksModel
 import com.example.bookpdf.databinding.ItemBookBinding
-import com.example.bookpdf.ui.details_activity.DetailsActivity
+import com.example.bookpdf.ui.pdf_activity.PdfActivity
 import com.example.bookpdf.utils.loadOnline
 
 class HomeChildAdapter(val list: ArrayList<BooksModel>, val context: Context) :
@@ -24,11 +19,10 @@ class HomeChildAdapter(val list: ArrayList<BooksModel>, val context: Context) :
                 model.apply {
                     imageView.loadOnline(image)
                     cardView.setOnClickListener {
-                        Intent().apply {
-                            putExtra("book_model", model)
-                            setClass(context, DetailsActivity::class.java)
-                            context.startActivity(this)
+                        val intent = Intent(context, PdfActivity::class.java).apply {
+                            putExtra("book_pdf", bookPDF) // Change to the asset file name
                         }
+                        context.startActivity(intent)
                     }
                 }
             }

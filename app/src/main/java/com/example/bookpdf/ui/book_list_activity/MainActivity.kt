@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                     title = "Harry Potter",
                     description = "any desc",
                     author = "J.K.Rowling",
-                    bookPDF = "https://docenti.unimc.it/antonella.pascali/teaching/2018/19055/files/ultima-lezione/harry-potter-and-the-philosophers-stone"
+                    bookPDF = "harry_potter.pdf"
                 )
             for (i in 1..5) {
                 tempList.add(
