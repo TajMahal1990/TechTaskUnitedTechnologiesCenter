@@ -1,11 +1,13 @@
 package com.example.bookpdf.ui.categiry_activity.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bookpdf.data.model.BooksModel
 import com.example.bookpdf.databinding.ItemCategoryBinding
+import com.example.bookpdf.ui.details_activity.DetailsActivity
 import com.example.bookpdf.utils.loadOnline
 
 
@@ -19,6 +21,13 @@ class CategoryAdapter(val list: ArrayList<BooksModel>, val context: Context) :
                 mBookImage.loadOnline(model.image)
                 mBookDesc.text = model.description
                 mAuthorName.text = model.author
+                binding.root.setOnClickListener{
+                    Intent().apply {
+                        putExtra("book_model",model)
+                        setClass(context,DetailsActivity::class.java)
+                        context.startActivity(this)
+                    }
+                }
             }
 
         }

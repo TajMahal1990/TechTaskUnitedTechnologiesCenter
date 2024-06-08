@@ -22,7 +22,14 @@ class HomeChildAdapter(val list: ArrayList<BooksModel>, val context: Context) :
         fun bind(model: BooksModel, context: Context) {
             binding.apply {
                 model.apply {
-                    imageView.loadOnline(image.toString())
+                    imageView.loadOnline(image)
+                    cardView.setOnClickListener {
+                        Intent().apply {
+                            putExtra("book_model", model)
+                            setClass(context, DetailsActivity::class.java)
+                            context.startActivity(this)
+                        }
+                    }
                 }
             }
         }
