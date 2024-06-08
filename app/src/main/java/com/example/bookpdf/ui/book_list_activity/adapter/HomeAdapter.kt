@@ -31,6 +31,15 @@ class HomeAdapter(val list: ArrayList<HomeModel>, val context: Context) :
                     mCategoryTitle.text = catTitle
                     mSeeAllBtn.setOnClickListener {
 
+                        val intent = Intent()
+                        intent.putExtra("book_list",booksList)
+                        intent.setClass(context,CategoryActivity::class.java)
+                        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                            context as Activity,
+                            mChildRvBooks,
+                            mChildRvBooks.transitionName
+                        )
+                        context.startActivity(intent,options.toBundle())
                     }
                     if (booksList != null) {
                         mChildRvBooks.setupChildRv(booksList, context)

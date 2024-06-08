@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             val tempList = ArrayList<BooksModel>()
             val tempModel =
                 BooksModel(
-                    image = R.drawable.book_1,
+                    image = "https://thumbs.dreamstime.com/b/harry-potter-warner-brothers-studio-tour-london-uk-entrance-where-filmed-actual-film-series-movie-poster-sorcerers-164168768.jpg",
                     title = "Harry Potter",
                     description = "any desc",
                     author = "J.K.Rowling",
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             )
             list.add(
                 HomeModel(
-                    catTitle = "Motivation",
+                    catTitle = "Fantasy",
                     booksList = tempList
                 )
             )
@@ -57,13 +57,3 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
