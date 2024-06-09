@@ -20,18 +20,19 @@ class PdfActivity : AppCompatActivity() {
         if (bookPdf != null) {
             try {
                 binding.pdfView.fromAsset(bookPdf)
-                    .swipeHorizontal(false)
+                    .swipeHorizontal(true)
                     .enableSwipe(true)
                     .pageSnap(true)
                     .autoSpacing(true)
                     .pageFling(true)
+                    .onPageChange { page, pageCount ->
+                        binding.pageNumberText.text = "Page ${page + 1} of $pageCount"
+                    }
                     .load()
             } catch (e: IOException) {
                 e.printStackTrace()
-                // Handle error case if PDF could not be loaded
             }
         } else {
-            // Handle error case if bookPdf is null
         }
     }
 }
