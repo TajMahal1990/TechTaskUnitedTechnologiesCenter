@@ -75,7 +75,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:lineHeight="40dp"
-                android:text="Today's\nBook"
+                android:text="For You"
                 android:textColor="@color/black"
                 android:textSize="28sp"
                 android:textStyle="bold"

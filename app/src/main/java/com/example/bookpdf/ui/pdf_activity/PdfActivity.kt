@@ -42,6 +42,7 @@ class PdfActivity : AppCompatActivity(), OnPageChangeListener {
             }
         } else {
             // Handle error case if bookPdf is null
+
         }
     }
 
