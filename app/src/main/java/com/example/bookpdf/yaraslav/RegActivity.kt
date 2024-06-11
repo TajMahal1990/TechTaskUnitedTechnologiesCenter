@@ -49,7 +49,7 @@ class RegActivity : AppCompatActivity() {
                 db.addUser(user)
                 Toast.makeText(this, "Пользователь $login добавлен", Toast.LENGTH_LONG).show()
 
-                val intent = Intent(this, MainActivityEmil::class.java)
+                val intent = Intent(this, AuthActivity::class.java)
                 startActivity(intent)
 
                 userLogin.text.clear()
