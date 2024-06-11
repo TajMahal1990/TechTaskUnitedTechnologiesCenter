@@ -8,7 +8,7 @@ import com.example.bookpdf.databinding.ActivityMainBinding
 import com.example.bookpdf.ui.book_list_activity.adapter.HomeAdapter
 import com.example.bookpdf.ui.book_list_activity.adapter.LAYOUT_BOD
 
-class MainActivity : AppCompatActivity() {
+class MainActivityEmil : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     val activity = this
     val list: ArrayList<HomeModel> = ArrayList()
